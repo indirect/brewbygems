@@ -10,13 +10,15 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andre Arko"]
   s.date = %q{2009-12-04}
-  s.description = %q{Adds RubyGems post-install and post-uninstall hooks to update Homebrew bin/ symlinkgemspec.}
+  s.description = %q{Adds RubyGems post-install and post-uninstall hooks to update Homebrew bin/ symlinks}
   s.email = %q{andre@arko.net}
   s.extra_rdoc_files = [
     "README.md"
   ]
   s.files = [
-    "README.md",
+    ".gitignore",
+     "README.md",
+     "Rakefile",
      "brewbygems.gemspec",
      "lib/rubygems_plugin.rb"
   ]
