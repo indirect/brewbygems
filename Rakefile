@@ -10,6 +10,7 @@ begin
     gemspec.email  = "andre@arko.net"
     gemspec.homepage = "http://github.com/indirect/brewbygems"
   end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler not available. Install it with: gem install jeweler"
 end
