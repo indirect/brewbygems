@@ -1,7 +1,7 @@
 Gem::post_install do |installer|
-  cellar_glob = File.join(`brew --prefix`.chomp, "Cellar/*")
+  cellar = File.join(`brew --prefix`.chomp, "Cellar")
   # Augh RubyGems why is installer.gem_home a Pathname here
-  installing_to_cellar = Pathname.new(installer.gem_home).fnmatch(cellar_glob)
+  installing_to_cellar = installer.gem_home.to_s.include?(cellar)
   has_binary = installer.spec.executables.any?
 
   unless system("brew link gems")
@@ -10,9 +10,9 @@ Gem::post_install do |installer|
 end
 
 Gem::post_uninstall do |installer|
-  cellar_glob = File.join(`brew --prefix`.chomp, "Cellar/*")
+  cellar = File.join(`brew --prefix`.chomp, "Cellar")
   # Augh RubyGems why is installer.gem_home a String here
-  installing_to_cellar = Pathname.new(installer.gem_home).fnmatch(cellar_glob)
+  installing_to_cellar = installer.gem_home.to_s.include?(cellar)
   has_binary = installer.spec.executables.any?
 
   unless system("brew prune")
