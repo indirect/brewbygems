@@ -1,4 +1,7 @@
-if !defined?(Brewbygems::VERSION) || Gem::Version.new(Brewbygems::VERSION) < Gem::Version.new("0.3.0")
+loaded_already  = defined?(Brewbygems::VERSION)
+loaded_is_older = loaded_already && Gem::Version.new(Brewbygems::VERSION) < Gem::Version.new("0.3.0")
+
+if !loaded_already || loaded_is_older
   module Brewbygems
     VERSION = "0.3.0"
 
