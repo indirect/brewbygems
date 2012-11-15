@@ -4,7 +4,8 @@ module Brewbygems
 
     def link
       puts "brewbygems: running command `brew link gems`" if Gem.configuration.verbose == 1
-      system("brew link gems #{silence}")
+      system("brew unlink gems #{silence}")
+      system("brew link --overwrite gems #{silence}")
     end
 
     def prune
