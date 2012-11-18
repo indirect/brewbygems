@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
 
   s.authors     = ["André Arko"]
-  s.date        = %q{2010-11-05}
+  s.date        = %q{2012-11-17}
   s.summary     = %q{Makes sure RubyGems plays nice with Homebrew}
   s.description = %q{Adds RubyGems post-install and post-uninstall hooks to update Homebrew bin/ symlinks}
   s.email       = %q{andre@arko.net}
