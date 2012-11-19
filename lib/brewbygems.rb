@@ -5,7 +5,7 @@ module Brewbygems
     def link(installer)
       if system("brew ls gems > /dev/null")
         puts "brewbygems: relinking gems formula" if Gem.configuration.verbose == 1
-        system("brew unlink #{silence} gems && brew link gems #{silence}")
+        system("brew unlink #{silence} gems && brew link --overwrite gems #{silence}")
       elsif system("ls `brew --prefix`/bin/ruby")
         installer.spec.executables.each { |each|
           prefix = `brew --prefix`.chomp
